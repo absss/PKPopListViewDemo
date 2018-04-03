@@ -7,7 +7,7 @@
 //
 
 import UIKit
-protocol PKPopListViewDelegate {
+protocol PKPopListViewDelegate:class {
     func pkPopListView(withView listView:PKPopListView, didselected tag:Int)
     func pkPopListView(withView listView:PKPopListView, cellForItem item:UITableViewCell?,withTag tag:Int)
    
@@ -35,7 +35,7 @@ class PKPopListView: UIView {
     }
     
     ///显示还是隐藏
-    var delegate : PKPopListViewDelegate?
+    weak var delegate : PKPopListViewDelegate?
     
     ///是否需要能滚动
     var canScroll = false {
